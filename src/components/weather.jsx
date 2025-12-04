@@ -16,7 +16,7 @@ export default function Weather() {
 
   return (
     <div>
-        <h3>Weather: {weatherData.current.temp_c}</h3>
+        <h3>Weather: {weatherData?.current.temp_c}</h3>
         {error && <p>{error}</p>}
     </div>
   );
