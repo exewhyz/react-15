@@ -1,24 +1,24 @@
-import { useState } from "react";
+import { useData } from "../context/dataContext"
 
 export default function Form() {
-  const [title, setTitle] = useState("");
+
+  const { city, setCity } = useData();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(title);
-    setTitle("");
   }
+  
   return (
     <form className="form" onSubmit={handleSubmit}>
-      <label htmlFor="title">Title</label>
+      <label htmlFor="city">City Name</label>
       <input
-        id="title"
+        id="city"
         type="text"
-        placeholder="Enter your Blog Title"
-        value={title}
-        onChange={(e)=>{ setTitle(e.target.value) }}
+        placeholder="Enter your city name"
+        value={city}
+        onChange={(e)=>{ setCity(e.target.value) }}
         required
       />
-      <button>Create Blog</button>
     </form>
   );
 }
